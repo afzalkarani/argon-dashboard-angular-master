@@ -1,0 +1,6 @@
+<select class="dropdown-item form-control form-control-alternative">
+    <option disabled class="dropdown-item">--Select Countries </option>
+    <option *ngFor="let country of countries" [value]="country.id"> 
+        {{country.name}} 
+    </option> 
+</select>

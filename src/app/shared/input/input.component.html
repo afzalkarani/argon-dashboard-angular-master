@@ -1,0 +1,38 @@
+<input
+  [formControl]="control"
+  [type]="type"
+  [placeholder]="placeholder"
+  [mask]="format"
+  class="form-control form-control-alternative"
+  [dropSpecialCharacters]="false"
+/>
+
+<ng-container *ngIf="control.touched && control.dirty">
+  <span
+    class="text-danger fw-light red ml-1 fs-7"
+    *ngIf="control.errors?.required"
+  >
+    <small> {{placeholder}} is required</small>
+  </span>
+
+  <span
+    class="text-danger fw-light red ml-1 fs-7"
+    *ngIf="control.errors?.email"
+  >
+    <small>Email must be a valid email address</small>
+  </span>
+
+  <span
+    class="text-danger fw-light red ml-1 fs-7"
+    *ngIf="!control.errors?.required && control.errors?.['strong']"
+  >
+    <small>Please enter strong Password</small>
+  </span>
+
+  <span
+    class="text-danger fw-light red ml-1 fs-7"
+    *ngIf="!control.errors?.required && !control.errors?.['strong'] && control.errors?.['confirmedValidator']"
+  >
+    <small>Password & Confirm Password should match</small>
+  </span>
+</ng-container>

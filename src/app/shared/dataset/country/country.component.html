@@ -1,0 +1,70 @@
+<table class="table align-items-center table-flush">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Capital</th>
+            <th scope="col">Population</th>
+            <th scope="col">Continent</th>
+            <th scope="col">Currency</th>
+            <th scope="col">Language</th>
+            <th scope="col">Region</th>
+            <th scope="col">SubRegion</th>
+            <th scope="col">LatLong</th>
+            <th scope="col">Maps</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of countries">
+            <th scope="row">
+                <div class="media align-items-center">
+                    <div class="media-body">
+                        <span class="mb-0 text-sm">{{ country.id }}</span>
+                    </div>
+                </div>
+            </th>
+            <td>
+                <span  style="
+                display:inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 13ch;">
+                {{ country.name }}
+                </span>
+                
+            </td>
+            <td>
+                {{ country.capital }}
+            </td>
+            <td>
+                {{ country.population }}
+            </td>
+            <td>
+                {{ country.continent }}
+            </td>
+            <td class="text-right">
+                {{ country.currency }}
+            </td>
+            <td>
+                {{ country.language }}
+            </td>
+
+            <td>
+                {{ country.region }}
+            </td>
+
+            <td>
+                {{ country.subRegion }}
+            </td>
+            <td>{{ country.latitude }}, {{ country.longitude }}</td>
+
+            <td>
+                <a href="{{ country.googleMaps }}" class="avatar avatar-sm" data-toggle="tooltip"
+                    data-original-title="Ryan Tompson">
+                    {{ country.cca2 }}
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
